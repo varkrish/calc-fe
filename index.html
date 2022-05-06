@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <title> DBS Calculator App</title>
+  <script src="assets/jquery-3.6.0.min.js"></script>
+  <script src="assets/callbackend.js"></script>
+  <script src="assets/calcutil.js"></script>
+  <link href="assets/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">  
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+  
+</head>
+<body>
+<form>
+    <div class="container-sm border-1">
+        
+        <div class="row" style="margin-top: 5em;">
+          <div class="col">
+            <label for="operand_1" class="form-label"></label>Enter a number</label>
+            <input type="number" class="form-control" id="operand_1" placeholder="Enter number">
+          </div>
+          <div class="col">
+            <label for="operator" class="form-label"></label>Enter a number</label>
+                <select id="operator" class="form-select">
+                 <option id="add">+</option>
+                 <option id="sub">-</option>
+                 <option id="multi">*</option>
+                 <option id="divide">-</option>
+                 <option id="rand">Random Fun</option>
+             </select>
+          </div>
+          <div class="col">
+            <label for="operand_2" class="form-label"></label>Enter a number</label>
+            <input type="number" class="form-control" id="operand_2" placeholder="Enter number">
+        </div>
+        <div class="row" style="margin-top: 5ex;">
+            <button type="button" id="submit" class="btn btn-primary" style="background-color: #ee0000;">Calculate</button>
+        </div>
+        <div class="row" style="margin-top: 5ex;">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+        </div>
+        <div class="row align-items-start" style="margin-top: 5ex;">
+          <div class="col-12">
+            <h3 id="result" style="text-align: center;">Click on calculate to see the result</h3>
+          </div>
+        </div>
+<!--response section-->
+        <div class="row align-items-start" style="margin-top: 5ex;">
+            <div class="col-6">
+                <table id="calc_history" style="margin-top: 5ex;" class="table-responsive-md table-bordered display">
+                    <thead><tr>
+                    <th>#</th>
+                    <th>Operand 1</th>
+                    <th>Operand 2</th>
+                    <th>Result</th>
+                    <th>Response time from backend</th>
+                </tr>
+                </thead>
+                  </table>
+            </div>
+            <div class="col-auto">
+            <div class="Average response time">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Average Response time</h5>
+                      <p class="card-text"> 5 ms</p>
+                    </div>
+                  </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </form>
+</body>
+<script>$(document).ready( function () {
+    $('#calc_history').DataTable();
+    } );
+    var data = [
+    [
+        "Tiger Nixon",
+        "System Architect",
+        "Edinburgh",
+        "5421",
+        "2011/04/25"
+    ],
+    [
+        "Garrett Winters",
+        "Director",
+        "Edinburgh",
+        "8422",
+        "2011/07/25"
+    ]
+]
+$('#calc_history').DataTable( {
+    data: data
+} );
+$( "#submit" ).on( "click", callBackEnd );
+</script>
+</html>
