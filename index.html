@@ -80,10 +80,9 @@
 <script>$(document).ready( function () {
     $('#calc_history').DataTable();
     } );
-$( "#submit" ).on( "click", callBackEnd );
-$( "#target" ).submit(function( event ) {
-  alert( "Handler for .submit() called." );
+$( "#calc_inp" ).submit(function( event ) {
   event.preventDefault();
+  callBackEnd();
 });
 </script>
 </html>
