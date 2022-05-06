@@ -1,4 +1,4 @@
-var backendUrl="http://localhost:9999/calc/assets/test/add.json"
+var backendUrl="http://localhost:8080/calc/assets/test/add.json"
 
 function callBackEnd()
 {
