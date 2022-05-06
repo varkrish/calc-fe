@@ -2,14 +2,14 @@ version: "3"
 
 services:
   frontend:
-    image: calculatorfrontend:latest
+    image: nginx:latest
     # build: .
     volumes:
       - type: bind
         source: ./
-        target: /usr/local/tomcat/webapps/calc
+        target: /usr/share/nginx/html
     ports:
-      - 9999:8080
+      - 8080:80
   # elasticsearch:
   #   image: docker.elastic.co/elasticsearch/elasticsearch:7.13.0
   #   environment:
