@@ -2,10 +2,11 @@ Calculator front-end project is a simple html & JQuery based application created
 
 ### Run Frontend app
 
-  ``
+  ```
   docker pull nginx
+
   docker run --name calc-fe -d -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx
-  ``
+  ```
 
  ### Run the whole stack
 
