@@ -1,0 +1,8 @@
+{
+    "input":{
+        "operand_1":"2",
+        "operand_2":"3",
+        "operator":"*"
+    },
+    "result": 6
+}

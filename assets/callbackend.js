@@ -1,11 +1,16 @@
-var backendUrl="http://localhost:8080/assets/test/add.json"
 var tableCounter=1;
+
 function callBackEnd()
 {
- var operand1= $('#operand_1').val(); 
- var operand2= $('#operand_2').val(); 
- var operator= $('#operator :selected').text();
- var posting = $.get(backendUrl, {
+ var operand1= encodeURI ($('#operand_1').val()); 
+ var operand2= encodeURI ($('#operand_2').val()); 
+ var operator= encodeURI ($('#operator :selected').val());
+ var tmpUrl;
+ if (env==="local")
+  tmpUrl=backendUrl +"/" + operator + "/result.json";
+ else
+  tmpUrl=backendUrl + "/" + operator + "/" + operand1 + "/" + operand2; 
+ var posting = $.get(tmpUrl, {
     "operand1": operand1,
     "operand2": operand2,
     "operator": operator

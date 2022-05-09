@@ -2,6 +2,7 @@
 <html>
     <head>
   <title> DBS Calculator App</title>
+  <script src="assets/env.js"></script>
   <script src="assets/jquery-3.6.0.min.js"></script>
   <script src="assets/callbackend.js"></script>
   <script src="assets/calcutil.js"></script>
@@ -15,7 +16,6 @@
 <body>
 <form id="calc_inp"  action="#">
     <div class="container-sm border-1">
-        
         <div class="row" style="margin-top: 5em;">
           <div class="col">
             <label for="operand_1" class="form-label"></label>Enter a number</label>
@@ -24,11 +24,11 @@
           <div class="col">
             <label for="operator" class="form-label"></label>Enter a number</label>
                 <select id="operator" class="form-select" required>
-                 <option id="add">+</option>
-                 <option id="sub">-</option>
-                 <option id="multi">*</option>
-                 <option id="divide">-</option>
-                 <option id="rand">Random Fun</option>
+                 <option id="add" value="add">+</option>
+                 <option id="sub" value="subtract">-</option>
+                 <option id="multi" value="multiply" >*</option>
+                 <option id="divide" value="divide">/</option>
+                 <option id="rand" value="random">Random Fun</option>
              </select>
           </div>
           <div class="col">
