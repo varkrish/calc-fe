@@ -2,14 +2,15 @@ version: "3"
 
 services:
   frontend:
-    image: nginx:latest
+    image: rh-nginx:latest
     # build: .
     volumes:
       - type: bind
-        source: ./
-        target: /usr/share/nginx/html
+        source: ./src/
+        target: /opt/app-root/src
     ports:
-      - 8080:80
+      - 8080:8080
+    command: nginx -g "daemon off;"
   # elasticsearch:
   #   image: docker.elastic.co/elasticsearch/elasticsearch:7.13.0
   #   environment:
